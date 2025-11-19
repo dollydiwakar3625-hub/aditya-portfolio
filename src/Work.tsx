@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "../ui/Header";
-import Card from "../ui/Card";
-import WedHighlight from "../assets/wedding-highlight-poster.png";
-import reel from "../assets/reel-poster.png"
-import PreWdding from "../assets/pre-wedding-poster.png";
-import Teaser from "../assets/wedding-teaser-poster.png";
-import Workbg from "../assets/main-bg.jpg";
+import Header from "./ui/Header";
+import Card from "./ui/Card";
+import WedHighlight from "./assets/wedding-highlight-poster.png";
+import reel from "./assets/reel-poster.png"
+import PreWdding from "./assets/pre-wedding-poster.png";
+import Teaser from "./assets/wedding-teaser-poster.png";
+import Workbg from "./assets/main-bg.jpg";
 
 const workCards = [
   {
