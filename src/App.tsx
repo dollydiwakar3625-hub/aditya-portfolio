@@ -1,4 +1,4 @@
-import mainBg from '../assets/main-bg.jpg';
+import mainBg from './assets/main-bg.jpg';
 import { FaWhatsapp, FaInstagram, FaEnvelope} from "react-icons/fa";
 
 function App() {
