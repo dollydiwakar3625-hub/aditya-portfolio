@@ -1,33 +1,33 @@
 import React, { useState } from "react";
 
 const navLinks = [
-  "HOME",
-  "WORK",
-  "WEDDING HIGHLIGHTS",
-  "REELS",
-  "WEDDING TEASER",
-  "PRE-WEDDING"
+  { label: "HOME", url: "/" },
+  { label: "WORK", url: "/work" },
+  { label: "WEDDING HIGHLIGHTS", url: "/wedding-highlights" },
+  { label: "REELS", url: "/reels" },
+  { label: "WEDDING TEASER", url: "/wedding-teaser" },
+  { label: "PRE-WEDDING", url: "/pre-wedding" },
 ];
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="w-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 shadow-md relative z-10">
+    <header className="w-full shadow-sm bg-[#ffffff0d] relative z-10">
       <div className=" flex items-center justify-between px-12 py-4 h-[80px]">
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link, idx) => {
+            {navLinks.map((nav, idx) => {
               const smallFont = [2, 3, 4, 5].includes(idx);
               return (
                 <a
-                  key={link}
-                  href="#"
+                  key={nav.label}
+                  href={nav.url}
                   className={`font-medium ${idx === 1 ? "text-white font-bold" : "text-white hover:text-white"} 
                     ${smallFont ? "text-xs hover:text-sm" : "text-md hover:text-lg"} 
                     transition-all duration-300 ease-in-out`}
                 >
-                  {link}
+                  {nav.label}
                 </a>
               );
             })}
@@ -52,18 +52,18 @@ const Header: React.FC = () => {
             &times;
           </button>
           <nav className="flex flex-col gap-8 text-center">
-              {navLinks.map((link, idx) => {
+              {navLinks.map((nav, idx) => {
                 const smallFont = [2, 3, 4, 5].includes(idx);
                 return (
                   <a
-                    key={link}
-                    href="#"
+                    key={nav.label}
+                    href={nav.url}
                     className={`font-semibold ${idx === 1 ? "text-[#e7d1cb] font-bold" : "text-white hover:text-[#e7d1cb]"} 
                       ${smallFont ? "text-xs hover:text-sm" : "text-2xl hover:text-3xl"} 
                       transition-all duration-300 ease-in-out`}
                     onClick={() => setMenuOpen(false)}
                   >
-                    {link}
+                    {nav.label}
                   </a>
                 );
               })}
