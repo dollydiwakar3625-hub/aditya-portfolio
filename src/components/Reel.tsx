@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../ui/Header";
-import Workbg from "../assets/main-bg.jpg";
+import Workbg from "../assets/main-bg.webp";
 import ReelComponent from "../ui/Reel";
 import poster1 from "../assets/reel-poster-1.jpg";
 import reel1 from "../assets/reel-1.mp4";
@@ -17,7 +17,7 @@ const Reel: React.FC = () => {
     style={{
       backgroundImage: `url(${Workbg})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'left',
       }}>
       <div className="absolute inset-0 bg-black bg-opacity-30 z-1" />
       <Header />

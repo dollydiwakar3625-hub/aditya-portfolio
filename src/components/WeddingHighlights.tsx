@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../ui/Header";
-import Workbg from "../assets/main-bg.jpg";
+import Workbg from "../assets/main-bg.webp";
 import Video from "../ui/Video";
 import poster1 from "../assets/wedding-video-poster-1.jpg";
 import video1 from "../assets/wedding-video-1.mp4";
@@ -14,7 +14,7 @@ const WeddingHighlights: React.FC = () => {
     style={{
       backgroundImage: `url(${Workbg})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'left',
       }}>
       <div className="absolute inset-0 bg-black bg-opacity-30 z-1" />
       <Header />

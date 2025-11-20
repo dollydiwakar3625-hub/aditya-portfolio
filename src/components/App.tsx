@@ -34,13 +34,13 @@ function App() {
         </button>
         {/* Social Icons */}
         <div className="flex space-x-6 mt-8 text-white text-2xl">
-          <a href="#" aria-label="Behance" className="hover:text-cyan-400">
+          <a href="https://w.app/3thw8q" target='_blank' aria-label="Behance" className="hover:text-cyan-400">
             <FaWhatsapp size={28} />
           </a>
-          <a href="#" aria-label="Email" className="hover:text-cyan-400">
+          <a href="https://www.instagram.com/story_by_aditya?igsh=MXVoNXhwc2NuMDJ1dw==" target='_blank' aria-label="Email" className="hover:text-cyan-400">
             <FaInstagram size={28} />
           </a>
-          <a href="#" aria-label="Instagram" className="hover:text-cyan-400">
+          <a href="mailto:aditya.mehra.71619@gmail.com" aria-label="Instagram" className="hover:text-cyan-400">
           <FaEnvelope size={28} />  
           </a>
         </div>

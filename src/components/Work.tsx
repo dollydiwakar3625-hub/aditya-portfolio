@@ -1,30 +1,13 @@
 import React from "react";
 import Header from "../ui/Header";
-import Card from "../ui/Card";
-import WedHighlight from "../assets/wedding-highlight-poster.jpg";
-import reel from "../assets/reel-poster.jpg"
-import PreWdding from "../assets/pre-wedding-poster.jpg";
-import Teaser from "../assets/wedding-teaser-poster.jpg";
-import Workbg from "../assets/main-bg.jpg";
+import Workbg from "../assets/main-bg.webp";
 
-const workCards = [
-  {
-    image: WedHighlight,
-    url: "/wedding-highlights",
-  },
-  {
-    image: reel,
-    url: "/reels",
-  },
-  {
-    image: Teaser,
-    url: "/wedding-teaser",
-  },
-  {
-    image: PreWdding,
-    url: "/pre-wedding",
-  }
-];
+const btn = [
+  { label: "WEDDING HIGHLIGHTS", url: "/wedding-highlights" },
+  { label: "REELS", url: "/reels" },
+  { label: "WEDDING TEASER", url: "/wedding-teaser" },
+  { label: "PRE-WEDDING", url: "/pre-wedding" },
+]
 
 const Work: React.FC = () => {
   return (
@@ -32,21 +15,27 @@ const Work: React.FC = () => {
       style={{
         backgroundImage: `url(${Workbg})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'left',
       }}>
       <Header />
       <div className="absolute inset-0 bg-black bg-opacity-30" />
-    <div className="min-h-[calc(100vh - 80vh)] mx-auto" style={{
-      minHeight: 'calc(100vh - 80px)',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center'
-    }}>
-        <main className="md:w-[75%] lg:w-[60%] xl:w-[45%] mx-auto w-auto p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-          {workCards.map((card, idx) => (
-            <Card key={idx} url={card.url} image={card.image} />
+      <div className="mx-auto flex flex-col justify-center sm:items-end pr-4 pl-4 sm:pl-0 sm:pr-[40px] z-5 relative" style={{
+        minHeight: 'calc(100vh - 120px)'
+      }}>
+        <div className="xl:w-1/5 2xl:w-1/6 flex flex-col gap-6">
+          {btn.map((button) => (
+            <a
+              key={button.label}
+              href={button.url}
+              className="text-white text-md font-bold hover:text-[#e7d1cb] transition-colors duration-300 bg-[#ffffff0d] w-full px-6 py-4 rounded-md shadow-md text-center"
+            >
+              {button.label}
+            </a>
           ))}
-        </main>
+        </div>
+        <div className="fixed left-0 bottom-0 sm:left-8 sm:bottom-8 p-4 sm:p-0">
+          <span className="text-lg font-bold text-white"><i>“Emotion is the true substance of wedding photography”</i></span>
+        </div>
       </div>
     </div>
   );

@@ -3,10 +3,6 @@ import React, { useState } from "react";
 const navLinks = [
   { label: "HOME", url: "/" },
   { label: "WORK", url: "/work" },
-  { label: "WEDDING HIGHLIGHTS", url: "/wedding-highlights" },
-  { label: "REELS", url: "/reels" },
-  { label: "WEDDING TEASER", url: "/wedding-teaser" },
-  { label: "PRE-WEDDING", url: "/pre-wedding" },
 ];
 
 const Header: React.FC = () => {
