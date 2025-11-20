@@ -34,7 +34,7 @@ const Header: React.FC = () => {
         </nav>
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-3xl text-gray-700 focus:outline-none"
+          className="md:hidden text-3xl text-white focus:outline-none"
           onClick={() => setMenuOpen(true)}
           aria-label="Open menu"
         >
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
       </div>
       {/* Mobile Nav Overlay */}
       {menuOpen && (
-        <div className="fixed inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-opacity-95 flex flex-col items-center justify-center z-50 transition-all">
+        <div className="fixed inset-0 bg-[#000] flex flex-col items-center justify-center z-50 transition-all">
           <button
             className="absolute top-8 right-8 text-4xl text-white focus:outline-none"
             onClick={() => setMenuOpen(false)}
