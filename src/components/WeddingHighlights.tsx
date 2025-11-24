@@ -27,7 +27,7 @@ const WeddingHighlights: React.FC = () => {
           <Video poster={poster2} src={video2} alt="Wedding Video" />
         </div>
         <div>
-          <a href="#" className="text-md text-white">test@gmail.com</a>
+          <a href="mailto:aditya.mehra.71619@gmail.com" className="text-md text-white">aditya.mehra.71619@gmail.com</a>
         </div>
       </div>
     </div>
