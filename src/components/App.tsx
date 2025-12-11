@@ -1,5 +1,5 @@
 import mainBg from '../assets/main-bg.jpg';
-import { FaWhatsapp, FaInstagram, FaEnvelope} from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           I'M <span className="text-cyan-400 font-bold text-3xl sm:text3xl">ADITYA</span>
         </h2>
         <p className="text-white text-base max-w-xl mb-2">
-          
+
           A passionate Freelance Video Editor &amp; Photographer with <span className="font-semibold">5+ years</span> of experience,<br />
           Specializing in top-tier software to craft compelling Visual Stories.
         </p>
@@ -34,14 +34,15 @@ function App() {
         </button>
         {/* Social Icons */}
         <div className="flex space-x-6 mt-8 text-white text-2xl">
-          <a href="https://w.app/3thw8q" target='_blank' aria-label="Behance" className="hover:text-cyan-400">
+          <a href="https://wa.me/919501423437?text=Hello%2C%20I%20want%20to%20know%20your%20photoshoot%20pricing%20and%20packages.
+" target='_blank' aria-label="Behance" className="hover:text-cyan-400">
             <FaWhatsapp size={28} />
           </a>
           <a href="https://www.instagram.com/story_by_aditya?igsh=MXVoNXhwc2NuMDJ1dw==" target='_blank' aria-label="Email" className="hover:text-cyan-400">
             <FaInstagram size={28} />
           </a>
           <a href="mailto:aditya.mehra.71619@gmail.com" aria-label="Instagram" className="hover:text-cyan-400">
-          <FaEnvelope size={28} />  
+            <FaEnvelope size={28} />
           </a>
         </div>
       </div>

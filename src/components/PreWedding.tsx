@@ -11,12 +11,40 @@ import preVideo3 from "../assets/pre-video-3.mp4";
 import poster4 from "../assets/pre-poster-4.jpg";
 import preVideo4 from "../assets/pre-video-4.mp4";
 
+const videos = [
+  { poster: poster1, src: preVideo1, alt: "PreWedding Video", date: "08-Dec-2025T7:18pm" },
+  { poster: poster2, src: preVideo2, alt: "PreWedding Video", date: "07-Dec-2025T6:00pm" },
+  { poster: poster3, src: preVideo3, alt: "PreWedding Video", date: "06-Dec-2025T5:00pm" },
+  { poster: poster4, src: preVideo4, alt: "PreWedding Video", date: "05-Dec-2025T4:00pm" },
+];
+
+videos.sort((a, b) => {
+  const parseDate = (str: string): Date => {
+    const [datePart, timePart] = str.split('T');
+    const [day, month, year] = datePart.split('-');
+    let [hour, minute] = timePart.replace('pm', '').replace('am', '').split(':');
+    const isPM = timePart.includes('pm');
+    hour = parseInt(hour, 10);
+    const minuteNum = parseInt(minute, 10);
+    if (isPM && hour < 12) hour += 12;
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const monthIndex = months.indexOf(month);
+    return new Date(Number(year), monthIndex, Number(day), hour, minuteNum);
+  };
+  return parseDate(b.date).getTime() - parseDate(a.date).getTime();
+});
+
 const PreWedding: React.FC = () => {
+  const [page, setPage] = React.useState(1);
+  const reelsPerPage = 4;
+  const totalPages = Math.ceil(videos.length / reelsPerPage);
+  const startIdx = (page - 1) * reelsPerPage;
+  const paginatedVideos = videos.slice(startIdx, startIdx + reelsPerPage);
 
   return (
     <div className="relative min-h-screen pb-10 z-2"
-    style={{
-      backgroundImage: `url(${Workbg})`,
+      style={{
+        backgroundImage: `url(${Workbg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'left',
       }}>
@@ -27,11 +55,34 @@ const PreWedding: React.FC = () => {
           <h1 className="text-2xl text-white font-medium">Wedding Teaser</h1>
         </div>
         <div className="max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 sm:gap-10">
-          <Video poster={poster1} src={preVideo1} alt="Wedding Video" />
-          <Video poster={poster2} src={preVideo2} alt="Wedding Video" />
-          <Video poster={poster3} src={preVideo3} alt="Wedding Video" />
-          <Video poster={poster4} src={preVideo4} alt="Wedding Video" />
+          {paginatedVideos.map((video, idx) => (
+            <div key={startIdx + idx} className="flex flex-col items-center">
+              <Video poster={video.poster} src={video.src} alt={video.alt} />
+            </div>
+          ))}
         </div>
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex gap-4 mt-6 items-center justify-center">
+            <button
+              className={`px-3 py-1 bg-black text-white rounded ${page === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-black"}`}
+              onClick={() => setPage(page - 1)}
+              disabled={page === 1}
+              style={page === 1 ? { cursor: 'not-allowed' } : {}}
+            >
+              Prev
+            </button>
+            <span className="text-white text-md font-medium">{page}</span>
+            <button
+              className={`px-3 py-1 bg-black text-white rounded ${page === totalPages ? "opacity-50 cursor-not-allowed" : "hover:bg-black"}`}
+              onClick={() => setPage(page + 1)}
+              disabled={page === totalPages}
+              style={page === totalPages ? { cursor: 'not-allowed' } : {}}
+            >
+              Next
+            </button>
+          </div>
+        )}
         <div>
           <a href="mailto:aditya.mehra.71619@gmail.com" className="text-md text-white">aditya.mehra.71619@gmail.com</a>
         </div>
