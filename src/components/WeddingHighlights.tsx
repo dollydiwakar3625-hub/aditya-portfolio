@@ -6,6 +6,7 @@ import poster1 from "../assets/wedding-video-poster-1.jpg";
 import video1 from "../assets/wedding-video-1.mp4";
 import poster2 from "../assets/wedding-video-poster-2.jpg";
 import video2 from "../assets/wedding-video-2.mp4";
+import { parseDate } from "../utils/dateUtils";
 
 const videos = [
   { poster: poster1, src: video1, alt: "Wedding Video", date: "08-Dec-2025T7:18pm" },
@@ -13,18 +14,6 @@ const videos = [
 ];
 
 videos.sort((a, b) => {
-  const parseDate = (str: string): Date => {
-    const [datePart, timePart] = str.split('T');
-    const [day, month, year] = datePart.split('-');
-    let [hour, minute] = timePart.replace('pm', '').replace('am', '').split(':');
-    const isPM = timePart.includes('pm');
-    hour = parseInt(hour, 10);
-    const minuteNum = parseInt(minute, 10);
-    if (isPM && hour < 12) hour += 12;
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    const monthIndex = months.indexOf(month);
-    return new Date(Number(year), monthIndex, Number(day), hour, minuteNum);
-  };
   return parseDate(b.date).getTime() - parseDate(a.date).getTime();
 });
 
