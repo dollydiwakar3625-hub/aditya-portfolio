@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const navLinks = [
   { label: "HOME", url: "/" },
   { label: "WORK", url: "/work" },
+  { label: "PRICING", url: "/pricing" },
 ];
 
 const Header: React.FC = () => {
@@ -14,13 +15,12 @@ const Header: React.FC = () => {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((nav, idx) => {
-              const smallFont = [2, 3, 4, 5].includes(idx);
               return (
                 <a
                   key={nav.label}
                   href={nav.url}
                   className={`font-medium ${idx === 1 ? "text-white font-bold" : "text-white hover:text-white"} 
-                    ${smallFont ? "text-xs hover:text-sm" : "text-md hover:text-lg"} 
+                    
                     transition-all duration-300 ease-in-out`}
                 >
                   {nav.label}

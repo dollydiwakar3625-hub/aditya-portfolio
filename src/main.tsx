@@ -2,11 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Root from "./Root";
-// import ScrollToTopButton from "./ui/ScrollToTopButton";
+import NewPage from "./components/NewPage";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Root />
-    {/* <ScrollToTopButton /> */}
+    <Routes>
+      <Route path="/new-page" element={<NewPage />} />
+    </Routes>
   </React.StrictMode>
 );

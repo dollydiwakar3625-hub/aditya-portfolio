@@ -6,6 +6,8 @@ import WeddingHighlights from "./components/WeddingHighlights";
 import Reel from "./components/Reel";
 import WeddingTeaser from "./components/WeddingTeaser";
 import PreWedding from "./components/PreWedding";
+import Pricing from "./components/pricing";
+import NewPage from "./components/NewPage";
 
 const Root: React.FC = () => (
   <Router>
@@ -16,6 +18,8 @@ const Root: React.FC = () => (
       <Route path="/reels" element={<Reel />} />
       <Route path="/wedding-teaser" element={<WeddingTeaser />} />
       <Route path="/pre-wedding" element={<PreWedding />} />
+<Route path="/pricing" element={<Pricing />} />
+      <Route path="/new-page" element={<NewPage />} />
     </Routes>
   </Router>
 );
