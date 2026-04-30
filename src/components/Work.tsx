@@ -1,14 +1,13 @@
 import React from "react";
 import Header from "../ui/Header";
 import Workbg from "../assets/main-bg.webp";
-import { Link } from 'react-router-dom';
 
 const btn = [
   { label: "WEDDING HIGHLIGHTS", url: "/wedding-highlights" },
   { label: "REELS", url: "/reels" },
   { label: "WEDDING TEASER", url: "/wedding-teaser" },
   { label: "PRE-WEDDING", url: "/pre-wedding" },
-  { label: "NEW PAGE", url: "/new-page" },
+  // { label: "NEW", url: "/new" },
 ]
 
 const Work: React.FC = () => {
@@ -37,9 +36,6 @@ const Work: React.FC = () => {
         </div>
         <div className="fixed left-0 bottom-0 sm:left-8 sm:bottom-8 p-4 sm:p-0">
           <span className="text-lg font-bold text-white"><i>“Emotion is the true substance of wedding photography”</i></span>
-        </div>
-        <div className="work-buttons">
-          <Link to="/new-page" className="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-700">New Page</Link>
         </div>
       </div>
     </div>
